@@ -248,15 +248,19 @@ HDRFlow模型的训练脚本，负责模型的训练过程，包括前向传播�
 
 获取命令行参数：
 get_args() 函数定义了所有的命令行参数，例如数据集路径、日志目录、训练超参数等。
+![image](https://github.com/OUC-CV/final-project-ouc_hao/assets/111734393/3af24a93-0ebc-4128-bdf9-0942c9144460)
 
 模型训练函数：
 train() 函数定义了模型的训练过程。在每个训练循环中，加载数据并将其传输到 GPU 上，计算损失并进行反向传播优化模型参数。
+![image](https://github.com/OUC-CV/final-project-ouc_hao/assets/111734393/669089c1-147a-4a44-bd29-7a5ec4165a6f)
 
 模型验证函数：
 validation() 函数用于评估模型在验证集上的性能。计算预测图像与真实图像之间的 PSNR（峰值信噪比），并保存最佳模型。
+![image](https://github.com/OUC-CV/final-project-ouc_hao/assets/111734393/6f19bfc5-5d82-4b67-aa71-892ad8a197e4)
 
 主函数：
 main() 函数是整个训练流程的入口。它初始化模型、损失函数和优化器，并循环执行多个 epoch 的训练和验证过程。
+![image](https://github.com/OUC-CV/final-project-ouc_hao/assets/111734393/c5c902d9-850e-43f5-95b3-1862086ce407)
 
 日志和模型保存：
 在训练过程中，会保存每个 epoch 结束后的模型参数、优化器状态和训练日志。这些信息保存在指定的日志目录下，便于后续分析和恢复训练。
@@ -265,12 +269,15 @@ main() 函数是整个训练流程的入口。它初始化模型、损失函数�
 7. test_3E.py
 
 HDRFlow模型的测试脚本，负责在指定数据集上评估预训练模型的效果，并保存评估结果。
+![image](https://github.com/OUC-CV/final-project-ouc_hao/assets/111734393/a40a39d0-9976-40dd-80b7-b0835dab90ce)
 
 使用 argparse 解析命令行参数，支持选择不同的数据集和设置预训练模型路径、保存结果的目录等。
 使用 torch 和 torchvision 库进行深度学习模型的加载和推理。
 提供了 --dataset 和 --dataset_dir 参数，用于指定数据集类型和数据集路径。
 --pretrained_model 指定了预训练模型的路径。
 --save_results 选择是否保存评估结果，--save_dir 指定结果保存的目录。
+![image](https://github.com/OUC-CV/final-project-ouc_hao/assets/111734393/5b7103ac-949b-4181-a99e-5b4c80c638b9)
+![image](https://github.com/OUC-CV/final-project-ouc_hao/assets/111734393/4d865ddf-51dc-4e82-9600-6d591bf88f2a)
 
 模型加载和设置：
 加载 HDRFlow 模型并放置在 GPU 上进行评估。
